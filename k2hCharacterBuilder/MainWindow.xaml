@@ -91,6 +91,25 @@
             <TextBlock Name="IntDmgTextBox" Grid.Column="1" Grid.Row="2" Text="0" Foreground="#d6c392" TextAlignment="Right" Margin="0,0,0,0" Padding="0,5,5,0"/>
         </Border>
 
+        <Border Grid.Column="6" Grid.Row="10" BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+            <TextBlock Grid.Column="1" Grid.Row="10" Text="HP" Background="#1b130e" Foreground="#d6c392" Margin="0,0,50,0"/>
+        </Border>
+
+        <Border Grid.Column="6" Grid.Row="10" BorderBrush="#524338" Background="Transparent" BorderThickness="1">
+            <TextBlock Name="HpTextBlock" Grid.Column="1" Grid.Row="10" Text="0" TextAlignment="Right" Background="Transparent" Foreground="#d6c392"
+                       Margin="0,0,10,0" Padding="0,0,75,0"/>
+        </Border>
+
+        <Border Grid.Column="6" Grid.Row="10" BorderBrush="#524338" Background="Transparent" BorderThickness="1">
+            <TextBlock Grid.Column="1" Grid.Row="10" Text="MP" Background="Transparent" Foreground="#d6c392"
+                       Margin="0,0,50,0" Padding="75,0,0,0"/>
+        </Border>
+
+        <Border Grid.Column="6" Grid.Row="10" BorderBrush="#524338" Background="Transparent" BorderThickness="1">
+            <TextBlock Name="MpTextBlock"  Grid.Column="1" Grid.Row="10" Text="0" Background="Transparent" Foreground="#d6c392"
+                       TextAlignment="Right" Margin="0,0,0,0" Padding="0,0,5,0"/>
+        </Border>
+
 
 
         <Border Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="4" BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
