@@ -14,6 +14,12 @@
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="20" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -31,7 +37,7 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Column="1" Grid.Row="1" FontSize="35" FontFamily="Perpetua Titling MT" Foreground="#d6c392"  Text="K2H Character Builder" Grid.ColumnSpan="5" Margin="0,0,0,10"/>
+        <TextBlock Grid.Column="1" Grid.Row="1" FontSize="35" FontFamily="Perpetua Titling MT" Foreground="#d6c392"  Text="K2H Character Builder" Grid.ColumnSpan="20" Margin="0,0,0,10"/>
 
         <Border Grid.Column="1" Grid.Row="2" BorderBrush="#524338" BorderThickness="1">
             <TextBlock Grid.Column="1" Grid.Row="2" Text="Stat pts" Background="#1b130e" Foreground="#d6c392" />
@@ -44,6 +50,48 @@
         <Border Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="4" BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
             <TextBlock Grid.Column="1" Grid.Row="4" Text="Strength" VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392" />
         </Border>
+
+        <Border Grid.Column="6" Grid.Row="4" BorderBrush="#524338" BorderThickness="1">
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="Melee dmg" Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" />
+        </Border>
+
+        <Border Grid.Column="6" Grid.Row="4"  BorderThickness="1" Margin="100,0,0,0" >
+            <TextBlock Name="MeleeDmgTextBox" Grid.Column="1" Grid.Row="2" Text="0" Foreground="#d6c392" TextAlignment="Right" Margin="0,0,0,0" Padding="0,5,5,0"/>
+        </Border>
+
+        <Border Grid.Column="6" Grid.Row="5" BorderBrush="#524338" BorderThickness="1">
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="Armor class" Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" />
+        </Border>
+
+        <Border Grid.Column="6" Grid.Row="5"  BorderThickness="1" Margin="140,0,0,0" >
+            <TextBlock Name="ArmorClassTextBox" Grid.Column="1" Grid.Row="2" Text="0" Foreground="#d6c392" TextAlignment="Right" Margin="0,0,0,0" Padding="0,5,5,0"/>
+        </Border>
+
+        <Border Grid.Column="6" Grid.Row="6" BorderBrush="#524338" BorderThickness="1">
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="Range dmg" Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" />
+        </Border>
+
+        <Border Grid.Column="6" Grid.Row="6"  BorderThickness="1" Margin="100,0,0,0" >
+            <TextBlock Name="RangeDmgTextBox" Grid.Column="1" Grid.Row="2" Text="0" Foreground="#d6c392" TextAlignment="Right" Margin="0,0,0,0" Padding="0,5,5,0"/>
+        </Border>
+
+        <Border Grid.Column="6" Grid.Row="7" BorderBrush="#524338" BorderThickness="1">
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="Wis dmg" Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" />
+        </Border>
+
+        <Border Grid.Column="6" Grid.Row="7"  BorderThickness="1" Margin="100,0,0,0" >
+            <TextBlock Name="WisDmgTextBox" Grid.Column="1" Grid.Row="2" Text="0" Foreground="#d6c392" TextAlignment="Right" Margin="0,0,0,0" Padding="0,5,5,0"/>
+        </Border>
+
+        <Border Grid.Column="6" Grid.Row="8" BorderBrush="#524338" BorderThickness="1">
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="Int dmg" Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" />
+        </Border>
+
+        <Border Grid.Column="6" Grid.Row="8"  BorderThickness="1" Margin="100,0,0,0" >
+            <TextBlock Name="IntDmgTextBox" Grid.Column="1" Grid.Row="2" Text="0" Foreground="#d6c392" TextAlignment="Right" Margin="0,0,0,0" Padding="0,5,5,0"/>
+        </Border>
+
+
 
         <Border Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="4" BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
             <TextBlock Grid.Column="1" Grid.Row="5" Text="Endurance" VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392" />
