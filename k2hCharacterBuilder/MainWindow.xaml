@@ -5,175 +5,253 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:k2hCharacterBuilder"
         mc:Ignorable="d" FontSize="15"
-        Title="K2H Character Builder" Height="450" Width="800" Background="#251c15">
+        Title="K2H Character Builder" Height="650" Width="800" Background="#251c15">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="20" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="20" />
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Column="1" Grid.Row="1" FontSize="35" FontFamily="Perpetua Titling MT" Foreground="#d6c392"  Text="K2H Character Builder" Grid.ColumnSpan="20" Margin="0,0,0,10"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
 
-        <Border Grid.Column="1" Grid.Row="2" BorderBrush="#524338" BorderThickness="1">
-            <TextBlock Grid.Column="1" Grid.Row="2" Text="Stat pts" Background="#1b130e" Foreground="#d6c392" />
-        </Border>
+        <TextBlock Grid.Column="1" Grid.Row="0" FontSize="35" Margin="0,20,0,0" FontFamily="Perpetua Titling MT" Foreground="#d6c392"  Text="K2H Character Builder"/>
 
-        <Border Grid.Column="1" Grid.Row="2" BorderBrush="#524338" BorderThickness="1">
-            <TextBlock Name="AvailableStatPts" Grid.Column="1" Grid.Row="2" Text="25" Foreground="#d6c392" TextAlignment="Right" Padding="0,0,5,0"/>
-        </Border>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                    <StackPanel Orientation="Horizontal">
+                        <Border  MinWidth="111">
+                            <TextBlock Grid.Column="1" Grid.Row="4" Name="levelTextBlock" Text="Level: 1" VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392" Margin="10,0,0,0" />
+                        </Border>
+                        
+                        <TextBlock Grid.Column="1" Grid.Row="4" Name="statpointsTextBlock" Text="Stat points: 25" VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392" Margin="0,0,20,0" />
+                        <TextBlock Grid.Column="1" Grid.Row="4" Name="hpTextBlock" Text="HP: " VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392" Margin="0,0,20,0"/>
+                        <TextBlock Grid.Column="1" Grid.Row="4" Name="mpTextBlock" Text="MP: " VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392" Margin="0,0,20,0"/>
+                        <TextBlock Grid.Column="1" Grid.Row="4" Name="spTextBlock" Text="SP: " VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392" Margin="0,0,20,0"/>
 
-        <Border Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="4" BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
-            <TextBlock Grid.Column="1" Grid.Row="4" Text="Strength" VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392" />
-        </Border>
+                    </StackPanel>
+                </Border>
 
-        <Border Grid.Column="6" Grid.Row="4" BorderBrush="#524338" BorderThickness="1">
-            <TextBlock Grid.Column="1" Grid.Row="2" Text="Melee dmg" Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" />
-        </Border>
+            </Grid>
+        </Grid>
 
-        <Border Grid.Column="6" Grid.Row="4"  BorderThickness="1" Margin="100,0,0,0" >
-            <TextBlock Name="MeleeDmgTextBox" Grid.Column="1" Grid.Row="2" Text="0" Foreground="#d6c392" TextAlignment="Right" Margin="0,0,0,0" Padding="0,5,5,0"/>
-        </Border>
+            <Grid Grid.Row="2" Grid.Column="1" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
 
-        <Border Grid.Column="6" Grid.Row="5" BorderBrush="#524338" BorderThickness="1">
-            <TextBlock Grid.Column="1" Grid.Row="2" Text="Armor class" Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" />
-        </Border>
+                    <Border BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                        <StackPanel Orientation="Horizontal">
+                            <Border  MinWidth="110">
+                                <TextBlock Grid.Column="1" Grid.Row="4" Text="Strength" VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392" Margin="10,0,0,0" />
+                            </Border>
 
-        <Border Grid.Column="6" Grid.Row="5"  BorderThickness="1" Margin="140,0,0,0" >
-            <TextBlock Name="ArmorClassTextBox" Grid.Column="1" Grid.Row="2" Text="0" Foreground="#d6c392" TextAlignment="Right" Margin="0,0,0,0" Padding="0,5,5,0"/>
-        </Border>
+                            <Grid Name="BtnPlusStr" Width="30" Height="30" Background="#466e35" MouseLeftButtonDown="ClickPlusStr" Margin="0,0,0,0">
+                                <TextBlock Text="+" FontWeight="Bold" Foreground="#FFFF" FontSize="18" TextAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,5"/>
+                            </Grid>
 
-        <Border Grid.Column="6" Grid.Row="6" BorderBrush="#524338" BorderThickness="1">
-            <TextBlock Grid.Column="1" Grid.Row="2" Text="Range dmg" Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" />
-        </Border>
+                            <TextBox Name="strTextBox" HorizontalContentAlignment="Center" Text="0" Width="30" Height="30" Grid.Row="4" Grid.Column="3" Margin="5,0,5,0" VerticalContentAlignment="Center" />
 
-        <Border Grid.Column="6" Grid.Row="6"  BorderThickness="1" Margin="100,0,0,0" >
-            <TextBlock Name="RangeDmgTextBox" Grid.Column="1" Grid.Row="2" Text="0" Foreground="#d6c392" TextAlignment="Right" Margin="0,0,0,0" Padding="0,5,5,0"/>
-        </Border>
+                            <Grid Name="BtnMinusStr" Width="30" Height="30" Background="brown" Margin="0,0,5,0" MouseLeftButtonDown="ClickMinusStr">
+                                <TextBlock Text="-" FontWeight="Bold" Foreground="#FFFF" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5" />
+                            </Grid>
+                        </StackPanel>
+                    </Border>
 
-        <Border Grid.Column="6" Grid.Row="7" BorderBrush="#524338" BorderThickness="1">
-            <TextBlock Grid.Column="1" Grid.Row="2" Text="Wis dmg" Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" />
-        </Border>
+                    <Grid Grid.Column="1" Name="Spacer" HorizontalAlignment="Stretch"></Grid>
 
-        <Border Grid.Column="6" Grid.Row="7"  BorderThickness="1" Margin="100,0,0,0" >
-            <TextBlock Name="WisDmgTextBox" Grid.Column="1" Grid.Row="2" Text="0" Foreground="#d6c392" TextAlignment="Right" Margin="0,0,0,0" Padding="0,5,5,0"/>
-        </Border>
+                    <Border MinWidth="140" Grid.Column="2" BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                        <TextBlock Name="MeleeDmgTextBox" Margin="10,0,0,0" Text="Melee dmg: 0" Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" VerticalAlignment="Center" />
+                    </Border>
+                </Grid>
+            </Grid>
 
-        <Border Grid.Column="6" Grid.Row="8" BorderBrush="#524338" BorderThickness="1">
-            <TextBlock Grid.Column="1" Grid.Row="2" Text="Int dmg" Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" />
-        </Border>
+            <Grid Grid.Row="3" Grid.Column="1" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
 
-        <Border Grid.Column="6" Grid.Row="8"  BorderThickness="1" Margin="100,0,0,0" >
-            <TextBlock Name="IntDmgTextBox" Grid.Column="1" Grid.Row="2" Text="0" Foreground="#d6c392" TextAlignment="Right" Margin="0,0,0,0" Padding="0,5,5,0"/>
-        </Border>
+                <Border BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                    <StackPanel Orientation="Horizontal">
 
-        <Border Grid.Column="6" Grid.Row="10" BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
-            <TextBlock Grid.Column="1" Grid.Row="10" Text="HP" Background="#1b130e" Foreground="#d6c392" Margin="0,0,50,0"/>
-        </Border>
+                        <Border  MinWidth="110">
+                            <TextBlock Grid.Column="1" Grid.Row="4" Text="Endurance" VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392" Margin="10,0,0,0" />
+                        </Border>
 
-        <Border Grid.Column="6" Grid.Row="10" BorderBrush="#524338" Background="Transparent" BorderThickness="1">
-            <TextBlock Name="HpTextBlock" Grid.Column="1" Grid.Row="10" Text="0" TextAlignment="Right" Background="Transparent" Foreground="#d6c392"
+                        <Grid Name="BtnPlusEnd" Width="30" Height="30" Background="#466e35" MouseLeftButtonDown="ClickPlusEnd" Margin="0,0,0,0">
+                            <TextBlock Text="+" FontWeight="Bold" Foreground="#FFFF" FontSize="18" TextAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,5"/>
+                        </Grid>
+
+                        <TextBox Name="endTextBox" HorizontalContentAlignment="Center" Text="0" Width="30" Height="30" Grid.Row="4" Grid.Column="3" Margin="5,0,5,0" VerticalContentAlignment="Center" />
+
+                        <Grid Name="BtnMinusEnd" Width="30" Height="30" Background="brown" Margin="0,0,5,0" MouseLeftButtonDown="ClickMinusStr">
+                            <TextBlock Text="-" FontWeight="Bold" Foreground="#FFFF" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5" />
+                        </Grid>
+
+                    </StackPanel>
+                </Border>
+
+                <Grid Grid.Column="1" Name="Spacer2" HorizontalAlignment="Stretch"></Grid>
+
+                <Border MinWidth="140" Grid.Column="2" BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                    <TextBlock Name="ArmorClassTextBox" Margin="10,0,0,0" Text="Armor class: 0" Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" VerticalAlignment="Center" />
+                </Border>
+            </Grid>
+
+            <Grid Grid.Row="4" Grid.Column="1" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Border BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                    <StackPanel Orientation="Horizontal">
+                        <Border  MinWidth="110">
+                            <TextBlock Grid.Column="1" Grid.Row="4" Text="Agility" VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392" Margin="10,0,0,0" />
+                        </Border>
+
+                        <Grid Name="BtnPlusAgi" Width="30" Height="30" Background="#466e35" MouseLeftButtonDown="ClickPlusAgi" Margin="0,0,0,0">
+                            <TextBlock Text="+" FontWeight="Bold" Foreground="#FFFF" FontSize="18" TextAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,3"/>
+                        </Grid>
+
+                        <TextBox Name="agiTextBox" HorizontalContentAlignment="Center" Text="0" Width="30" Height="30" Grid.Row="4" Grid.Column="3" Margin="5,0,5,0" VerticalContentAlignment="Center" />
+
+                        <Grid Name="BtnMinusAgi" Width="30" Height="30" Background="brown" Margin="0,0,5,0" MouseLeftButtonDown="ClickMinusAgi">
+                            <TextBlock Text="-" FontWeight="Bold" Foreground="#FFFF" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5" />
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <Grid Grid.Column="1" Name="Spacer3" HorizontalAlignment="Stretch"></Grid>
+
+                <Border MinWidth="140" Grid.Column="2" BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                    <TextBlock Name="RangeDmgTextBox" Margin="10,0,0,0" Text="Range dmg: 0" Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" VerticalAlignment="Center" />
+                </Border>
+            </Grid>
+
+            <Grid Grid.Row="5" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Border BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                    <StackPanel Orientation="Horizontal">
+                        <Border MinWidth="110">
+                            <TextBlock Text="Wisdom" VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392" Margin="10,0,0,0"/>
+                        </Border>
+
+                        <Grid Name="BtnPlusWis" Width="30" Height="30" Background="#466e35" MouseLeftButtonDown="ClickPlusWis" Margin="0,0,0,0">
+                            <TextBlock Text="+" FontWeight="Bold" Foreground="#FFFF" FontSize="18" TextAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,3"/>
+                        </Grid>
+
+                        <TextBox Name="wisTextBox" HorizontalContentAlignment="Center" Text="0" Width="30" Height="30" Grid.Row="4" Grid.Column="3" Margin="5,0,5,0" VerticalContentAlignment="Center" />
+
+                        <Grid Name="BtnMinusWis" Width="30" Height="30" Background="brown" Margin="0,0,5,0" MouseLeftButtonDown="ClickMinusWis">
+                            <TextBlock Text="-" FontWeight="Bold" Foreground="#FFFF" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5" />
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <Grid Grid.Column="1" Name="Spacer4" HorizontalAlignment="Stretch"></Grid>
+
+                <Border MinWidth="140" Grid.Column="2" BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                    <TextBlock Name="WisDmgTextBox" Margin="10,0,0,0" Text="Wis dmg: 0" Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" VerticalAlignment="Center" />
+                </Border>
+            </Grid>
+
+            <Grid Grid.Row="6" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                    <StackPanel Orientation="Horizontal">
+                        <Border MinWidth="110">
+                            <TextBlock Text="Intelligence" VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392" Margin="10,0,0,0"/>
+                        </Border>
+
+                        <Grid Name="BtnPlusInt" Width="30" Height="30" Background="#466e35" MouseLeftButtonDown="ClickPlusInt" Margin="0,0,0,0">
+                            <TextBlock Text="+" FontWeight="Bold" Foreground="#FFFF" FontSize="18" TextAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,3"/>
+                        </Grid>
+
+                        <TextBox Name="intTextBox" HorizontalContentAlignment="Center" Text="0" Width="30" Height="30" Grid.Row="4" Grid.Column="3" Margin="5,0,5,0" VerticalContentAlignment="Center" />
+
+                        <Grid Name="BtnMinusInt" Width="30" Height="30" Background="brown" Margin="0,0,5,0" MouseLeftButtonDown="ClickMinusInt">
+                            <TextBlock Text="-" FontWeight="Bold" Foreground="#FFFF" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5" />
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <Grid Grid.Column="1" Name="Spacer5" HorizontalAlignment="Stretch"></Grid>
+
+                <Border MinWidth="140" Grid.Column="2" BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                    <TextBlock Name="IntDmgTextBox" Margin="10,0,0,0" Text="Int dmg: 0" Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" VerticalAlignment="Center" />
+                </Border>
+            </Grid>
+
+
+
+
+
+
+            <Border Grid.Column="6" Grid.Row="10" BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                <TextBlock Grid.Column="1" Grid.Row="10" Text="HP" Background="#1b130e" Foreground="#d6c392" Margin="0,0,50,0"/>
+            </Border>
+
+            <Border Grid.Column="6" Grid.Row="10" BorderBrush="#524338" Background="Transparent" BorderThickness="1">
+                <TextBlock Name="HpTextBlock" Grid.Column="1" Grid.Row="10" Text="0" TextAlignment="Right" Background="Transparent" Foreground="#d6c392"
                        Margin="0,0,10,0" Padding="0,0,75,0"/>
-        </Border>
+            </Border>
 
-        <Border Grid.Column="6" Grid.Row="10" BorderBrush="#524338" Background="Transparent" BorderThickness="1">
-            <TextBlock Grid.Column="1" Grid.Row="10" Text="MP" Background="Transparent" Foreground="#d6c392"
+            <Border Grid.Column="6" Grid.Row="10" BorderBrush="#524338" Background="Transparent" BorderThickness="1">
+                <TextBlock Grid.Column="1" Grid.Row="10" Text="MP" Background="Transparent" Foreground="#d6c392"
                        Margin="0,0,50,0" Padding="75,0,0,0"/>
-        </Border>
+            </Border>
 
-        <Border Grid.Column="6" Grid.Row="10" BorderBrush="#524338" Background="Transparent" BorderThickness="1">
-            <TextBlock Name="MpTextBlock"  Grid.Column="1" Grid.Row="10" Text="0" Background="Transparent" Foreground="#d6c392"
+            <Border Grid.Column="6" Grid.Row="10" BorderBrush="#524338" Background="Transparent" BorderThickness="1">
+                <TextBlock Name="MpTextBlock"  Grid.Column="1" Grid.Row="10" Text="0" Background="Transparent" Foreground="#d6c392"
                        TextAlignment="Right" Margin="0,0,0,0" Padding="0,0,5,0"/>
-        </Border>
+            </Border>
 
+            <Border Grid.Column="1" Grid.Row="10" BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                <TextBlock Grid.Column="1" Grid.Row="10" Text="Level" Background="#1b130e" Foreground="#d6c392" Margin="0,0,50,0"/>
+            </Border>
 
+            <Border Grid.Column="1" Grid.Row="10" BorderBrush="#524338" BorderThickness="1">
+                <TextBlock Name="CurrentLevelTextBlock" Grid.Column="1" Grid.Row="10" Text="1" Foreground="#d6c392" TextAlignment="Right" Padding="0,0,5,0" Margin="0,0,0,0"/>
+            </Border>
 
-        <Border Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="4" BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
-            <TextBlock Grid.Column="1" Grid.Row="5" Text="Endurance" VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392" />
-        </Border>
+            <ComboBox x:Name="WeaponComboBox" Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="2" Height="25"/>
+            <ComboBox x:Name="ShieldComboBox" Grid.Column="1" Grid.Row="13" Grid.ColumnSpan="2" Height="25"/>
 
-        <Border Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="4" BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
-            <TextBlock Grid.Column="1" Grid.Row="6" Text="Agility" VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392" />
-        </Border>
-
-        <Border Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="4" BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
-            <TextBlock Grid.Column="1" Grid.Row="7" Text="Wisdom" VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392"/>
-        </Border>
-
-        <Border Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="4" BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
-            <TextBlock Grid.Column="1" Grid.Row="8" Text="Intelligence" VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392" Margin="0,0,5,0"/>
-        </Border>
-
-        <Border Grid.Column="1" Grid.Row="10" BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
-            <TextBlock Grid.Column="1" Grid.Row="10" Text="Level" Background="#1b130e" Foreground="#d6c392" Margin="0,0,50,0"/>
-        </Border>
-
-        <Border Grid.Column="1" Grid.Row="10" BorderBrush="#524338" BorderThickness="1">
-            <TextBlock Name="CurrentLevelTextBlock" Grid.Column="1" Grid.Row="10" Text="1" Foreground="#d6c392" TextAlignment="Right" Padding="0,0,5,0" Margin="0,0,0,0"/>
-        </Border>
-
-        <Grid Grid.Row="4" Grid.Column="2" Name="BtnPlusStr" Width="25" Height="25" Background="#466e35" MouseLeftButtonDown="ClickPlusStr">
-            <TextBlock Text="+" FontWeight="Bold" Foreground="#FFFF" FontSize="18" TextAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,3"/>
         </Grid>
-
-        <Grid Grid.Row="5" Grid.Column="2" Name="BtnPlusEnd" Width="25" Height="25" Background="#466e35" MouseLeftButtonDown="ClickPlusEnd">
-            <TextBlock Text="+" FontWeight="Bold" Foreground="#FFFF" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5"/>
-        </Grid>
-        <Grid Grid.Row="6" Grid.Column="2" Name="BtnPlusAgi" Width="25" Height="25" Background="#466e35" MouseLeftButtonDown="ClickPlusAgi">
-            <TextBlock Text="+" FontWeight="Bold" Foreground="#FFFF" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5"/>
-        </Grid>
-        <Grid Grid.Row="7" Grid.Column="2" Name="BtnPlusWis" Width="25" Height="25" Background="#466e35" MouseLeftButtonDown="ClickPlusWis">
-            <TextBlock Text="+" FontWeight="Bold" Foreground="#FFFF" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5"/>
-        </Grid>
-        <Grid Grid.Row="8" Grid.Column="2" Name="BtnPlusInt" Width="25" Height="25" Background="#466e35" MouseLeftButtonDown="ClickPlusInt">
-            <TextBlock Text="+" FontWeight="Bold" Foreground="#FFFF" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5"/>
-        </Grid>
-
-        <TextBox Name="strTextBox" Text="0" Width="30" Grid.Row="4" Grid.Column="3" Margin="5" TextChanged="UpdateLevel"/>
-        <TextBox Name="endTextBox" Text="0" Width="30" Grid.Row="5" Grid.Column="3" Margin="5" TextChanged="UpdateLevel"/>
-        <TextBox Name="agiTextBox" Text="0" Width="30" Grid.Row="6" Grid.Column="3" Margin="5" TextChanged="UpdateLevel"/>
-        <TextBox Name="wisTextBox" Text="0" Width="30" Grid.Row="7" Grid.Column="3" Margin="5" TextChanged="UpdateLevel"/>
-        <TextBox Name="intTextBox" Text="0" Width="30" Grid.Row="8" Grid.Column="3" Margin="5" TextChanged="UpdateLevel"/>
-
-        <Grid Grid.Row="4" Grid.Column="4" Name="BtnMinusStr" Width="25" Height="25" Background="brown" Margin="0,0,5,0" MouseLeftButtonDown="ClickMinusStr">
-            <TextBlock Text="-" FontWeight="Bold" Foreground="#FFFF" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5" />
-        </Grid>
-        <Grid Grid.Row="5" Grid.Column="4" Name="BtnMinusEnd" Width="25" Height="25" Background="brown" Margin="0,0,5,0" MouseLeftButtonDown="ClickMinusEnd">
-            <TextBlock Text="-" FontWeight="Bold" Foreground="#FFFF" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5"/>
-        </Grid>
-        <Grid Grid.Row="6" Grid.Column="4" Name="BtnMinusAgi" Width="25" Height="25" Background="brown" Margin="0,0,5,0" MouseLeftButtonDown="ClickMinusAgi">
-            <TextBlock Text="-" FontWeight="Bold" Foreground="#FFFF" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5"/>
-        </Grid>
-        <Grid Grid.Row="7" Grid.Column="4" Name="BtnMinusWis" Width="25" Height="25" Background="brown" Margin="0,0,5,0" MouseLeftButtonDown="ClickMinusWis">
-            <TextBlock Text="-" FontWeight="Bold" Foreground="#FFFF" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5"/>
-        </Grid>
-        <Grid Grid.Row="8" Grid.Column="4" Name="BtnMinusInt" Width="25" Height="25" Background="brown" Margin="0,0,5,0" MouseLeftButtonDown="ClickMinusInt">
-            <TextBlock Text="-" FontWeight="Bold" Foreground="#FFFF" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5"/>
-        </Grid>
-
-    </Grid>
 </Window>

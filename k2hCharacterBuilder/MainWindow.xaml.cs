@@ -19,133 +19,107 @@ namespace k2hCharacterBuilder
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    { 
+    {
+        Character character = new();
+        Item item = new();
+        
         public MainWindow()
         {
             InitializeComponent();
+
+            PopulateWeaponCombo();
+            PopulateShieldCombo();
+
+            strTextBox.TextChanged += UpdateLevel;
+            endTextBox.TextChanged += UpdateLevel;
+            agiTextBox.TextChanged += UpdateLevel;
+            wisTextBox.TextChanged += UpdateLevel;
+            intTextBox.TextChanged += UpdateLevel;
+
         }
-
-        private int strength = 0;
-        private int endurance = 0;
-        private int agility = 0;
-        private int wisdom = 0;
-        private int intelligence = 0;
-
-        private int statpoint = 25;
-
+ 
         private void ClickPlusStr(object sender, MouseButtonEventArgs e)
         {
-            strength++;
-            statpoint--;
-            strTextBox.Text = strength.ToString();
-            AvailableStatPts.Text = statpoint.ToString();
+            character.Strength++;
+            strTextBox.Text = character.Strength.ToString();    
         }
 
         private void ClickMinusStr(object sender, MouseButtonEventArgs e)
         {
-            strength--;
-            statpoint++;
-            strTextBox.Text = strength.ToString();
-            AvailableStatPts.Text = statpoint.ToString();
+            character.Strength--;
+            strTextBox.Text = character.Strength.ToString();
         }
 
         private void ClickPlusEnd(object sender, MouseButtonEventArgs e)
         {
-            endurance++;
-            statpoint--;
-            endTextBox.Text = endurance.ToString();
-            AvailableStatPts.Text = statpoint.ToString();
+            character.Endurance++;
+            endTextBox.Text = character.Endurance.ToString();  
         }
 
         private void ClickMinusEnd(object sender, MouseButtonEventArgs e)
         {
-            endurance--;
-            statpoint++;
-            endTextBox.Text = endurance.ToString();
-            AvailableStatPts.Text = statpoint.ToString();
+            character.Endurance--;
+            endTextBox.Text = character.Endurance.ToString();
         }
 
         private void ClickPlusAgi(object sender, MouseButtonEventArgs e)
         {
-            agility++;
-            statpoint--;
-            agiTextBox.Text = agility.ToString();
-            AvailableStatPts.Text = statpoint.ToString();
+            character.Agility++;
+            agiTextBox.Text = character.Agility.ToString();
         }
 
         private void ClickMinusAgi(object sender, MouseButtonEventArgs e)
         {
-            agility--;
-            statpoint++;
-            agiTextBox.Text = agility.ToString();
-            AvailableStatPts.Text = statpoint.ToString();
+            character.Agility--;
+            agiTextBox.Text = character.Agility.ToString();
         }
 
         private void ClickPlusWis(object sender, MouseButtonEventArgs e)
         {
-            wisdom++;
-            statpoint--;
-            wisTextBox.Text = wisdom.ToString();
-            AvailableStatPts.Text = statpoint.ToString();
+            character.Wisdom++;
+            wisTextBox.Text = character.Wisdom.ToString();
         }
 
         private void ClickMinusWis(object sender, MouseButtonEventArgs e)
         {
-            wisdom--;
-            statpoint++;
-            wisTextBox.Text = wisdom.ToString();
-            AvailableStatPts.Text = statpoint.ToString();
+            character.Wisdom--;
+            wisTextBox.Text = character.ToString();
         }
 
         private void ClickPlusInt(object sender, MouseButtonEventArgs e)
         {
-            intelligence++;
-            statpoint--;
-            intTextBox.Text = intelligence.ToString();
-            AvailableStatPts.Text = statpoint.ToString();
+            character.Intelligence++;            
+            intTextBox.Text = character.Intelligence.ToString();
         }
 
         private void ClickMinusInt(object sender, MouseButtonEventArgs e)
         {
-            intelligence--;
-            statpoint++;
-            intTextBox.Text = intelligence.ToString();
-            AvailableStatPts.Text = statpoint.ToString();
+            character.Intelligence++;
+            intTextBox.Text = character.Intelligence.ToString();
         }
-
-        private decimal currentLevel = 0;
 
         private void UpdateLevel(object sender, TextChangedEventArgs e)
         {
-           decimal sumOfStats = strength + endurance + agility + wisdom + intelligence;
+            levelTextBlock.Text = "Level: " + character.SetLevel().ToString();
+            statpointsTextBlock.Text = "Stat points: " + character.SetStatpoint().ToString();
 
-            if (sumOfStats <= 25)
-            {
-                currentLevel = 1;
-                CurrentLevelTextBlock.Text = currentLevel.ToString();
-            }
+            MeleeDmgTextBox.Text ="Melee dmg: " +  character.MeeleDmg.ToString();
+            RangeDmgTextBox.Text = "Range dmg: " + character.RangeDmg.ToString();
 
-            else if (sumOfStats > 25)
-            {
-                currentLevel = Math.Ceiling(1 + (sumOfStats - 25) / 3);
-                CurrentLevelTextBlock.Text = currentLevel.ToString();
-                AvailableStatPts.Text = statpoint.ToString();
-            }
+            hpTextBlock.Text = "HP: " + character.TotalHp.ToString();
+            mpTextBlock.Text = "MP: " + character.TotalMp.ToString();
 
-            statpoint = (((Convert.ToInt32(currentLevel - 1)) * 3)+25) - Convert.ToInt32(sumOfStats);
-            AvailableStatPts.Text = statpoint.ToString();
+            spTextBlock.Text = "SP: " + character.TotalStamina.ToString();
         }
 
-        private void OnKeyDown(object sender, KeyEventArgs e)
+        private void PopulateWeaponCombo()
         {
-            if (e.Key == Key.Enter)
-            {
-                strength = Convert.ToInt32(strTextBox.Text);
-                endurance = Convert.ToInt32(endTextBox.Text);
-                agility = Convert.ToInt32(agiTextBox.Text);
-                wisdom = Convert.ToInt32(wisTextBox.Text);
-                intelligence = Convert.ToInt32(intTextBox.Text);
-            }
+            WeaponComboBox.ItemsSource = DataManager<Item>.LoadData().Where(item => item.Type == 1);
+        }
+
+        private void PopulateShieldCombo()
+        {
+            ShieldComboBox.ItemsSource = DataManager<Item>.LoadData().Where(item => item.Type == 4);
         }
     }
 }
