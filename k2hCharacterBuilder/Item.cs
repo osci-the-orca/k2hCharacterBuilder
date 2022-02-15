@@ -8,9 +8,23 @@ using System.Text.Json;
 
 namespace k2hCharacterBuilder
 {
+    public enum ItemType
+    {
+       None = 0,
+        Weapon = 1,
+        Armor = 2,
+        Head = 3,
+        Shield = 4,
+        Cape = 14,
+        Legs = 15,
+        Ring = 21,
+        Amulet = 22,
+        Belt = 23
+    }
+
     class Item
     {
-        public int Type { get; set; }
+        public ItemType Type { get; set; }
         public string Name { get; set; }
         public int StrReq { get; set; }
         public int DefReq { get; set; }

@@ -18,6 +18,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
@@ -219,39 +220,155 @@
             </Grid>
 
 
+        <Grid Grid.Row="2" Grid.Column="3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="WeaponTextBox" Margin="10,0,0,0" Text="Weapon: " Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" VerticalAlignment="Center" />
+                        <ComboBox x:Name="WeaponComboBox" Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="2" Height="25" Width="130"/>
 
+                    </StackPanel>
+                </Border>
 
-
-
-            <Border Grid.Column="6" Grid.Row="10" BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
-                <TextBlock Grid.Column="1" Grid.Row="10" Text="HP" Background="#1b130e" Foreground="#d6c392" Margin="0,0,50,0"/>
-            </Border>
-
-            <Border Grid.Column="6" Grid.Row="10" BorderBrush="#524338" Background="Transparent" BorderThickness="1">
-                <TextBlock Name="HpTextBlock" Grid.Column="1" Grid.Row="10" Text="0" TextAlignment="Right" Background="Transparent" Foreground="#d6c392"
-                       Margin="0,0,10,0" Padding="0,0,75,0"/>
-            </Border>
-
-            <Border Grid.Column="6" Grid.Row="10" BorderBrush="#524338" Background="Transparent" BorderThickness="1">
-                <TextBlock Grid.Column="1" Grid.Row="10" Text="MP" Background="Transparent" Foreground="#d6c392"
-                       Margin="0,0,50,0" Padding="75,0,0,0"/>
-            </Border>
-
-            <Border Grid.Column="6" Grid.Row="10" BorderBrush="#524338" Background="Transparent" BorderThickness="1">
-                <TextBlock Name="MpTextBlock"  Grid.Column="1" Grid.Row="10" Text="0" Background="Transparent" Foreground="#d6c392"
-                       TextAlignment="Right" Margin="0,0,0,0" Padding="0,0,5,0"/>
-            </Border>
-
-            <Border Grid.Column="1" Grid.Row="10" BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
-                <TextBlock Grid.Column="1" Grid.Row="10" Text="Level" Background="#1b130e" Foreground="#d6c392" Margin="0,0,50,0"/>
-            </Border>
-
-            <Border Grid.Column="1" Grid.Row="10" BorderBrush="#524338" BorderThickness="1">
-                <TextBlock Name="CurrentLevelTextBlock" Grid.Column="1" Grid.Row="10" Text="1" Foreground="#d6c392" TextAlignment="Right" Padding="0,0,5,0" Margin="0,0,0,0"/>
-            </Border>
-
-            <ComboBox x:Name="WeaponComboBox" Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="2" Height="25"/>
-            <ComboBox x:Name="ShieldComboBox" Grid.Column="1" Grid.Row="13" Grid.ColumnSpan="2" Height="25"/>
-
+            </Grid>
         </Grid>
+        <Grid Grid.Row="3" Grid.Column="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="ShieldTextBox" Margin="10,0,0,0" Text="Off Hand: " Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" VerticalAlignment="Center" />
+                        <ComboBox x:Name="ShieldComboBox" Grid.Column="1" Grid.Row="13" Grid.ColumnSpan="2" Height="25" Width="130"/>
+
+                    </StackPanel>
+                </Border>
+
+
+
+
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="4" Grid.Column="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="HeadTextBox" Margin="10,0,0,0" Text="Head: " Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" VerticalAlignment="Center" />
+                        <ComboBox x:Name="HeadComboBox" Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="2" Height="25" Width="130"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="5" Grid.Column="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="ArmorTextBox" Margin="10,0,0,0" Text="Armor: " Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" VerticalAlignment="Center" />
+                        <ComboBox x:Name="ArmorComboBox" Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="2" Height="25" Width="130"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="6" Grid.Column="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="BeltTextBox" Margin="10,0,0,0" Text="Belt: " Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" VerticalAlignment="Center" />
+                        <ComboBox x:Name="BeltComboBox" Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="2" Height="25" Width="130"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="7" Grid.Column="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="LegsTextBox" Margin="10,0,0,0" Text="Legs: " Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" VerticalAlignment="Center" />
+                        <ComboBox x:Name="LegsComboBox" Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="2" Height="25" Width="130"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="8" Grid.Column="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="RingTextBox" Margin="10,0,0,0" Text="Ring: " Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" VerticalAlignment="Center" />
+                        <ComboBox x:Name="RingComboBox" Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="2" Height="25" Width="130"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="9" Grid.Column="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="AmuletTextBox" Margin="10,0,0,0" Text="Amulet: " Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" VerticalAlignment="Center" />
+                        <ComboBox x:Name="AmuletComboBox" Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="2" Height="25" Width="130"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="10" Grid.Column="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="CapeTextBox" Margin="10,0,0,0" Text="Cape: " Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" VerticalAlignment="Center" />
+                        <ComboBox x:Name="CapeComboBox" Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="2" Height="25" Width="130"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+
+    </Grid>
 </Window>

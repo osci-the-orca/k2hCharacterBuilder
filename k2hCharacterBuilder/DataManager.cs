@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace k2hCharacterBuilder
 {
-    class DataManager<T>
+    class DataManager<T> //: IDataManager<T>
     {
-
         public static List<T> LoadData()
         {
             List<T> data = new();

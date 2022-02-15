@@ -22,13 +22,23 @@ namespace k2hCharacterBuilder
     {
         Character character = new();
         Item item = new();
+        //IDataManager<Item> dataManager;
         
         public MainWindow()
         {
             InitializeComponent();
 
+            PopulateHeadCombo();
+            PopulateArmorCombo();
+            PopulateBeltCombo();
+            PopulateLegsCombo();
+            PopulateCapeCombo();
+
             PopulateWeaponCombo();
             PopulateShieldCombo();
+
+            PopulateRingCombo();
+            PopulateAmuleteCombo();
 
             strTextBox.TextChanged += UpdateLevel;
             endTextBox.TextChanged += UpdateLevel;
@@ -114,12 +124,47 @@ namespace k2hCharacterBuilder
 
         private void PopulateWeaponCombo()
         {
-            WeaponComboBox.ItemsSource = DataManager<Item>.LoadData().Where(item => item.Type == 1);
+            WeaponComboBox.ItemsSource = DataManager<Item>.LoadData().Where(item => item.Type == ItemType.Weapon);
         }
 
         private void PopulateShieldCombo()
         {
-            ShieldComboBox.ItemsSource = DataManager<Item>.LoadData().Where(item => item.Type == 4);
+            ShieldComboBox.ItemsSource = DataManager<Item>.LoadData().Where(item => item.Type == ItemType.Shield);
         }
+
+        private void PopulateArmorCombo()
+        {
+            ArmorComboBox.ItemsSource = DataManager<Item>.LoadData().Where(item => item.Type == ItemType.Shield);
+        }
+
+        private void PopulateHeadCombo()
+        {
+            HeadComboBox.ItemsSource = DataManager<Item>.LoadData().Where(item => item.Type == ItemType.Head);
+        }
+
+        private void PopulateBeltCombo()
+        {
+            BeltComboBox.ItemsSource = DataManager<Item>.LoadData().Where(item => item.Type == ItemType.Belt);
+        }
+
+        private void PopulateLegsCombo()
+        {
+            LegsComboBox.ItemsSource = DataManager<Item>.LoadData().Where(item => item.Type == ItemType.Legs);
+        }
+        private void PopulateCapeCombo()
+        {
+            CapeComboBox.ItemsSource = DataManager<Item>.LoadData().Where(item => item.Type == ItemType.Cape);
+        }
+
+        private void PopulateRingCombo()
+        {
+            RingComboBox.ItemsSource = DataManager<Item>.LoadData().Where(item => item.Type == ItemType.Ring);
+        }
+
+        private void PopulateAmuleteCombo()
+        {
+            AmuletComboBox.ItemsSource = DataManager<Item>.LoadData().Where(item => item.Type == ItemType.Amulet);
+        }
+
     }
 }
