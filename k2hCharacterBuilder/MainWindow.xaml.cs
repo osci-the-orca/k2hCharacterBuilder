@@ -46,6 +46,8 @@ namespace k2hCharacterBuilder
             wisTextBox.TextChanged += UpdateLevel;
             intTextBox.TextChanged += UpdateLevel;
 
+            WeaponComboBox.SelectionChanged += UpdateLevel;
+            ShieldComboBox.SelectionChanged += UpdateLevel;
         }
  
         private void ClickPlusStr(object sender, MouseButtonEventArgs e)
@@ -108,13 +110,19 @@ namespace k2hCharacterBuilder
             intTextBox.Text = character.Intelligence.ToString();
         }
 
-        private void UpdateLevel(object sender, TextChangedEventArgs e)
+        private void UpdateLevel(object sender, EventArgs e)
         {
+           
             levelTextBlock.Text = "Level: " + character.SetLevel().ToString();
             statpointsTextBlock.Text = "Stat points: " + character.SetStatpoint().ToString();
 
-            MeleeDmgTextBox.Text ="Melee dmg: " +  character.MeeleDmg.ToString();
+            //MeleeDmgTextBox.Text ="Melee dmg: " +  character.MeeleDmg.ToString();
+
+            MeleeDmgTextBox.Text = "Melee dmg: " + character.MeeleDmg;
+
             RangeDmgTextBox.Text = "Range dmg: " + character.RangeDmg.ToString();
+
+            ArmorClassTextBox.Text = "Armor class: " + character.ArmorClass.ToString();
 
             hpTextBlock.Text = "HP: " + character.TotalHp.ToString();
             mpTextBlock.Text = "MP: " + character.TotalMp.ToString();
@@ -122,6 +130,14 @@ namespace k2hCharacterBuilder
             spTextBlock.Text = "SP: " + character.TotalStamina.ToString();
         }
 
+        private void UpdateEquipment(object sender, SelectionChangedEventArgs e)
+        {
+            //MeleeDmgTextBox.Text = "Melee dmg: " + GetSelectedWeapon().AddStr.ToString();
+            GetSelectedWeapon();
+            GetSelectedOffHand();
+        }
+
+        
         private void PopulateWeaponCombo()
         {
             WeaponComboBox.ItemsSource = DataManager<Item>.LoadData().Where(item => item.Type == ItemType.Weapon);
@@ -166,5 +182,17 @@ namespace k2hCharacterBuilder
             AmuletComboBox.ItemsSource = DataManager<Item>.LoadData().Where(item => item.Type == ItemType.Amulet);
         }
 
+        private Item GetSelectedWeapon()
+        {
+            character.Weapon = (Item)WeaponComboBox.SelectedValue;
+
+            return character.Weapon;
+        }
+
+        private Item GetSelectedOffHand()
+        {
+            character.Shield = (Item)ShieldComboBox.SelectedValue;
+            return character.Shield;
+        }
     }
 }

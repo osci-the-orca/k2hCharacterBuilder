@@ -41,7 +41,7 @@
                 </Grid.ColumnDefinitions>
                 <Border BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
                     <StackPanel Orientation="Horizontal">
-                        <Border  MinWidth="111">
+                        <Border  >
                             <TextBlock Grid.Column="1" Grid.Row="4" Name="levelTextBlock" Text="Level: 1" VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392" Margin="10,0,0,0" />
                         </Border>
                         
@@ -49,6 +49,7 @@
                         <TextBlock Grid.Column="1" Grid.Row="4" Name="hpTextBlock" Text="HP: " VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392" Margin="0,0,20,0"/>
                         <TextBlock Grid.Column="1" Grid.Row="4" Name="mpTextBlock" Text="MP: " VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392" Margin="0,0,20,0"/>
                         <TextBlock Grid.Column="1" Grid.Row="4" Name="spTextBlock" Text="SP: " VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392" Margin="0,0,20,0"/>
+                        
 
                     </StackPanel>
                 </Border>
@@ -218,9 +219,12 @@
                     <TextBlock Name="IntDmgTextBox" Margin="10,0,0,0" Text="Int dmg: 0" Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" VerticalAlignment="Center" />
                 </Border>
             </Grid>
+        
+        <Grid Grid.Column="1" Grid.Row="8">
+            <TextBlock Grid.Column="1" Grid.Row="4" Name="testTextBlock" Text="Test: " VerticalAlignment="Center" Background="#1b130e" Foreground="#d6c392" Margin="0,0,20,0"/>
+        </Grid>
 
-
-        <Grid Grid.Row="2" Grid.Column="3">
+        <Grid Grid.Row="2" Grid.Column="2">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto" />
@@ -230,7 +234,7 @@
                 <Border BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Name="WeaponTextBox" Margin="10,0,0,0" Text="Weapon: " Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" VerticalAlignment="Center" />
-                        <ComboBox x:Name="WeaponComboBox" Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="2" Height="25" Width="130"/>
+                        <ComboBox x:Name="WeaponComboBox" Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="2" Height="25" Width="130" SelectionChanged="UpdateEquipment"/>
 
                     </StackPanel>
                 </Border>
@@ -245,9 +249,9 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
                 <Border BorderBrush="#524338" Background="#1b130e" BorderThickness="1">
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" >
                         <TextBlock Name="ShieldTextBox" Margin="10,0,0,0" Text="Off Hand: " Background="#1b130e" Foreground="#d6c392" Padding="2,5,0,0" VerticalAlignment="Center" />
-                        <ComboBox x:Name="ShieldComboBox" Grid.Column="1" Grid.Row="13" Grid.ColumnSpan="2" Height="25" Width="130"/>
+                        <ComboBox x:Name="ShieldComboBox" Grid.Column="1" Grid.Row="13" Grid.ColumnSpan="2" Height="25" Width="130" SelectionChanged="UpdateEquipment"/>
 
                     </StackPanel>
                 </Border>

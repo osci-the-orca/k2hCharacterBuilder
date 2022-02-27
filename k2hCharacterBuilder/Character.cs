@@ -17,6 +17,9 @@ namespace k2hCharacterBuilder
         public int StartStatPoints = 25;
         public int StatPoint { get; set; }
 
+        public Item Weapon { get; set; }
+        public Item Shield { get; set; }
+
         public const int StartHp = 60;
         public const int StartMp = 30;
         public const int StartStamina = 40;
@@ -25,8 +28,12 @@ namespace k2hCharacterBuilder
 
         public int TotalHp => StartHp + (Endurance * 2);
         public int TotalMp => StartMp + Wisdom + Intelligence;
-        public int MeeleDmg => Strength / 5;
+
+        public int MeeleDmg => ((Strength / 5) + (Weapon == null ? 0 : Weapon.AddStr));
+
         public int RangeDmg => (Agility / 7) + (Strength / 9);
+
+        public int ArmorClass => Shield == null ? 0 : Shield.AddDef;
         public int TotalStamina => StartStamina + Endurance;
 
         internal int SetStatpoint() => (((SetLevel() - 1) * 3) + StartStatPoints) - SumOfStats;
